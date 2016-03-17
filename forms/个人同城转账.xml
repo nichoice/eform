@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!-- x*26 y*29 -->
+
+<form name="form1" title="" fontSize="" scanPicture="">
+	<ui-settings mode="page" fontSize="11"></ui-settings><!-- step|page -->
+	<print-settings weight="210" height="297" xOffset="0" yOffset="0"></print-settings>
+	
+	<field name="请将二代身份证放入读卡区" type="subform">
+
+		<field name="姓名" column="varchar_00">
+			<ui type="text"></ui>
+			<paper x="31" y="68" fontSize="10" maxLength="20"></paper>
+		</field>
+
+		<field name="身份证号" column="varchar_01">
+			<ui type="text"></ui>
+			<paper x="31" y="105" fontSize="10" maxLength="10"></paper>
+		</field>
+		<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>
+	
+	<field name="代办人信息" column="varchar_03" type="subform">
+			<field name="是否是他人代办">
+				<ui type="checkbox"/>
+				<paper fontSize="15" maxLength="30" y="200" x="250"/>
+				<trigger name="number" triggerClass="cn.by.eform.ui.trigger.TogOthersTrigger"/>
+			</field>
+			
+			<field name="姓名" column="varchar_04">
+				<ui desc="pls input fld 0" type="text"/>
+				<paper fontSize="10" maxLength="100" x="31" y="189"/>
+			</field>
+			
+			<field name="身份证号" column="varchar_05">
+				<ui type="text"/>
+				<paper fontSize="10" maxLength="10" x="233" y="189" />
+			</field>
+			
+	</field>
+	
+	<field name="手机号码" column="varchar_07">
+			<ui type="text"></ui>
+			<paper x="31" y="150" fontSize="10" maxLength="11"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+			<validator name="validator" validatorClass="cn.by.eform.ui.validator.CellPhoneNumberValidator"></validator>
+	</field>
+	
+	<field name="帐号" column="varchar_08">
+			<ui type="text"></ui>
+			<paper x="31" y="85" fontSize="10" maxLength="19"></paper>
+	</field>
+	
+	<field name="开户银行" column="varchar_09">
+			<ui type="text"></ui>
+			<paper x="31" y="125" fontSize="10" maxLength="10"></paper>
+	</field>
+
+	<field name="收款人全称" column="varchar_10">
+		<ui type="text"></ui>
+		<paper x="310" y="68" fontSize="10" maxLength="10"></paper>
+	</field>
+
+	<field name="收款人帐号" column="varchar_11">
+			<ui type="text"></ui>
+			<paper x="254" y="85" fontSize="10" maxLength="10"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+
+	<field name="汇入地" type="subform">
+
+		<field name="省" column="varchar_12">
+			<ui type="text"></ui>
+			<paper x="254" y="105" fontSize="10" maxLength="10"></paper>
+		</field>
+
+		<field name="市(县)" column="varchar_13">
+			<ui type="text"></ui>
+			<paper x="314" y="105" fontSize="10" maxLength="10"></paper>
+		</field>
+		
+
+		<field name="行" column="varchar_14">
+			<ui type="text"></ui>
+			<paper x="254" y="125" fontSize="10" maxLength="10"></paper>
+		</field>
+	</field>
+
+	<field name="币别" column="varchar_15" type="choice">
+	
+		<field name="人民币">
+			<ui type="checkbox"></ui>
+			<paper x="36" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="港币">
+			<ui type="checkbox"></ui>
+			<paper x="98" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="美元">
+			<ui type="checkbox"></ui>
+			<paper x="156" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+	</field>
+
+<field name="汇款种类" column="varchar_16" type="choice">
+	
+		<field name="普通汇款">
+			<ui type="checkbox"></ui>
+			<paper x="200" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="普通附言汇款">
+			<ui type="checkbox"></ui>
+			<paper x="254" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="礼仪汇款">
+			<ui type="checkbox"></ui>
+			<paper x="329" y="134" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+	</field>
+
+	
+</form>	

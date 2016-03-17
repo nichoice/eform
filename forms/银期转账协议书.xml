@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<form name="form1" title="" fontSize="" scanPicture="">
+	<ui-settings mode="page" fontSize="11"></ui-settings><!-- step|page -->
+	<print-settings weight="210" height="297" xOffset="0"
+		yOffset="0"></print-settings>
+
+<field name="请将二代证放置读卡区" type="subform">
+
+		<field name="姓名" column="varchar_00">
+			<ui type="text"></ui>
+			<paper x="100" y="84" fontSize="10" maxLength="100"></paper>
+		</field>
+		<field name="身份证号" column="varchar_01">
+			<ui type="text"></ui>
+			<paper x="85" y="96" fontSize="10" maxLength="10"></paper>
+		</field>
+
+		<field name="地址" column="varchar_02">
+			<ui type="text"></ui>
+			<paper x="85" y="131" fontSize="10" maxLength="10"></paper>
+		</field>
+		<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>
+
+	<field name="手机号码" column="varchar_03">
+		<ui type="text"></ui>
+		<paper x="85" y="120" fontSize="10" maxLength="11"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		<validator name="validator" validatorClass="cn.by.eform.ui.validator.CellPhoneNumberValidator"></validator>
+	</field>
+
+
+	<field name="邮政编码" column="varchar_04">
+		<ui type="text"></ui>
+		<paper x="330" y="120" fontSize="10" maxLength="10"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+	
+	<field name="期货经纪公司名称" column="varchar_05">
+		<ui type="text"></ui>
+		<paper x="85" y="108" fontSize="10" maxLength="10"></paper>	
+	</field>
+	
+	<field name="银行帐号" column="varchar_06">
+		<ui type="text"></ui>
+		<paper x="330" y="96" fontSize="10" maxLength="10"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+	
+	<field name="期货资金帐号" column="varchar_07">
+		<ui type="text"></ui>
+		<paper x="356" y="108" fontSize="10" maxLength="10"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+	
+	
+</form>	

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<form name="form1" title="" fontSize="" scanPicture="">
+	<ui-settings mode="page" fontSize="11"></ui-settings><!-- step|page -->
+	<print-settings weight="210" height="297" xOffset="0"
+		yOffset="0"></print-settings>
+
+
+	<field name="请将二代证放置读卡区" type="subform">
+
+		<field name="姓名" column="varchar_00">
+			<ui type="text"></ui>
+			<paper x="58" y="91" fontSize="10" maxLength="100"></paper>
+		</field>
+		
+		<field name="身份证号" column="varchar_01">
+			<ui type="text"></ui>
+			<paper x="58" y="123" fontSize="10" maxLength="10"></paper>
+		</field>
+
+		<field name="地址" column="varchar_02">
+			<ui type="text"></ui>
+			<paper x="186" y="136" fontSize="10" maxLength="10"></paper>
+		</field>
+		<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>
+	
+	<field name="代办人信息" column="varchar_03" type="subform">
+			<field name="是否是他人代办">
+				<ui type="checkbox"/>
+				<paper fontSize="10" maxLength="30" y="200" x="250"/>
+				<trigger name="number" triggerClass="cn.by.eform.ui.trigger.TogOthersTrigger"/>
+			</field>
+			
+			<field name="姓名" column="varchar_04">
+				<ui desc="pls input fld 0" type="text"/>
+				<paper fontSize="10" maxLength="100" y="114" x="185"/>
+			</field>
+			
+			<field name="身份证号" column="varchar_05">
+				<ui type="text"/><paper fontSize="10" maxLength="10" y="189" x="340"/>
+			</field>
+			
+			<field name="地址" column="varchar_06">
+				<ui type="text"/><paper fontSize="10" maxLength="10" y="242" x="199"/>
+			</field>
+			<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>
+		
+	<field name="手机号码" column="varchar_07"> 
+		<ui type="text"></ui> 
+		<paper x="58" y="135" fontSize="10" maxLength="11"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		<validator name="validator" validatorClass="cn.by.eform.ui.validator.CellPhoneNumberValidator"></validator>
+	</field>
+	
+	<field name="账号/卡号" column="varchar_08">
+		<ui type="text"></ui>
+		<paper x="215" y="91" fontSize="10" maxLength="19"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+	
+	<field name="申请事项"  column="varchar_09" type="choice">
+	
+		<field name="银行卡销户 " >
+			<ui type="checkbox"></ui>
+			<paper x="1" y="219" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="银行卡损坏换卡">
+			<ui type="checkbox"></ui>
+			<paper x="74" y="219" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="满页换折" >
+			<ui type="checkbox"></ui>
+			<paper x="182" y="219" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="损毁换折">
+			<ui type="checkbox"></ui>
+			<paper x="253" y="219" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="账户实名 ">
+			<ui type="checkbox"></ui>
+			<paper x="327" y="219" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+	</field>
+	
+	<field name="修改客户信息 "  column="varchar_10" type="choice">
+				
+		<field name="常住/通讯地址 " >
+			<ui type="checkbox"></ui>
+			<paper x="74" y="233" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="更改电话" >
+			<ui type="checkbox"></ui>
+			<paper x="182" y="233" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="更改姓名" column="varchar_11">
+			<ui type="checkbox"></ui>
+			<paper x="253" y="233" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="更改证件号" >
+			<ui type="checkbox"></ui>
+			<paper x="327" y="233" fontSize="10" maxLength="30"></paper>
+		</field>		
+		
+	</field>
+	
+	<field name="修改后信息" column="varchar_12">
+		<ui type="text"></ui>
+		<paper x="72" y="250" fontSize="10" maxLength="10"></paper>
+	</field>
+	
+	<field name="电子银行 "  column="varchar_12" type="choice">
+	
+		<field name="短信通开通" >
+			<ui type="checkbox"></ui>
+			<paper x="42" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="登录密码重置">
+			<ui type="checkbox"></ui>
+			<paper x="233" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="网银盾更换 " >
+			<ui type="checkbox"></ui>
+			<paper x="316" y="265" fontSize="10" maxLength="30"></paper>
+		</field>	
+	</field>
+		
+	<field name="其他" column="varchar_13">
+		<ui type="text"></ui>
+		<paper x="73" y="285" fontSize="10" maxLength="10"></paper>
+	</field>
+		
+</form>	

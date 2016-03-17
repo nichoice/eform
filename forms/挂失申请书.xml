@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<form name="form1" title="" fontSize="" scanPicture="">
+	<ui-settings mode="page" fontSize="11"></ui-settings><!-- step|page -->
+	<print-settings weight="210" height="297" xOffset="0" yOffset="0"></print-settings>
+		
+	<field name="请将二代证放入读卡区" type="subform">
+
+		<field name="姓名" column="varchar_00">
+			<ui type="text"></ui>
+			<paper x="44" y="172" fontSize="10" maxLength="100"></paper>
+		</field>
+
+		<field name="身份证号" column="varchar_01">
+			<ui type="text"></ui>
+			<paper x="258" y="172" fontSize="10" maxLength="10"></paper>
+		</field>	
+
+		<field name="地址" column="varchar_02">
+			<ui type="text"></ui>
+			<paper x="214" y="195" fontSize="10" maxLength="10"></paper>
+		</field> 
+		<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>	
+	
+	<field name="代办人信息" column="varchar_03" type="subform">
+			<field name="是否是他人代办">
+				<ui type="checkbox"/>
+				<paper fontSize="10" maxLength="30" y="200" x="250"/>
+				<trigger name="number" triggerClass="cn.by.eform.ui.trigger.TogOthersTrigger"/>
+			</field>
+			
+			<field name="姓名" column="varchar_04">
+				<ui desc="pls input fld 0" type="text"/>
+				<paper fontSize="10" maxLength="100" y="189" x="118"/>
+			</field>
+			
+			<field name="身份证号" column="varchar_05">
+				<ui type="text"/><paper fontSize="10" maxLength="10" y="189" x="340"/>
+			</field>
+			<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>
+	</field>
+	
+	<field name="手机号" column="varchar_06">
+		<ui type="text"></ui>
+		<paper x="59" y="195" fontSize="10" maxLength="11"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		<validator name="validator" validatorClass="cn.by.eform.ui.validator.CellPhoneNumberValidator"></validator>
+	</field>
+
+
+	<field name="挂失原因" column="varchar_07" type="choice">
+	
+		<field name="遗失">
+			<ui type="checkbox"></ui>
+			<paper x="27" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="损毁">
+			<ui type="checkbox"></ui>
+			<paper x="71" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="遗忘">
+			<ui type="checkbox"></ui>
+			<paper x="170" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="其他">
+			<ui type="checkbox"></ui>
+			<paper x="114" y="265" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+	</field>
+
+	<field name="挂失内容" type="subform">
+
+		<field name="存款币种及种类" column="varchar_08">
+			<ui type="text" desc="pls input fld 0"></ui>
+			<paper x="30" y="326" fontSize="10" maxLength="100"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.HandWriteApp"/>
+			
+		</field>
+
+		<field name="账号/卡号" column="varchar_9">
+			<ui type="text"></ui>
+			<paper x="116" y="326" fontSize="10" maxLength="19"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		</field>	
+
+		<field name="户名" column="varchar_10">
+			<ui type="text"></ui>
+			<paper x="234" y="326" fontSize="10" maxLength="10"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.HandWriteApp"/>
+		</field> 
+	</field>
+		
+	<field name="挂失 内容" type="subform">
+		
+		<field name="金额" column="varchar_11">
+			<ui type="text"></ui>
+			<paper x="300" y="326" fontSize="10" maxLength="10"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		</field> 
+
+		<field name="开户日" column="varchar_12">
+			<ui type="text"></ui>
+			<paper x="354" y="326" fontSize="10" maxLength="10"></paper>
+			<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		</field> 
+	
+	</field>
+
+<!-- 
+	<field name="代办人与委托人的关系" column="varchar_13">
+		<ui type="text"></ui>
+		<paper x="231" y="381" fontSize="10" maxLength="10"></paper>
+		
+	</field>
+ -->
+
+</form>	

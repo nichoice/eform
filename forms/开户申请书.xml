@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<form name="form1" title="" fontSize="" scanPicture="">
+	<ui-settings mode="page" fontSize="11"></ui-settings><!-- step|page -->
+	<print-settings weight="210" height="297" xOffset="0" yOffset="0"></print-settings>
+	
+	<field name="请将二代证放入读卡区" type="subform">
+
+		<field name="姓名" column="varchar_00">
+			<ui type="text"></ui>
+			<paper x="31" y="164" fontSize="10" maxLength="20"></paper>
+		</field>
+	
+		<field name="出生日期" column="varchar_01">
+			<ui type="text"></ui>
+			<paper fontSize="10" maxLength="10" x="44" y="164">
+				<spliter fontSize="10" name="年" maxLength="4" x="55" y="164"/>
+				<spliter fontSize="10" name="月" maxLength="2" x="75" y="164"/>
+				<spliter fontSize="10" name="日" maxLength="2" x="85" y="164"/>
+			</paper>
+			
+		</field> 
+		
+		<field name="地址" column="varchar_02">
+			<ui type="text"></ui>
+			<paper fontSize="10" maxLength="10" x="50" y="0">
+				<spliter fontSize="10" name="省" maxLength="10" x="48" y="171"/>
+				<spliter fontSize="10" name="市" maxLength="25" x="88" y="171"/>
+				<spliter fontSize="10" name="区" maxLength="25" x="156" y="171"/>
+				<spliter fontSize="10" name="县" maxLength="25" x="265" y="171"/>
+				<spliter fontSize="10" name="地址" maxLength="25" x="407" y="171"/>
+			</paper>
+		</field>
+		
+		<field name="身份证号" column="varchar_03">
+			<ui type="text"></ui>
+			<paper x="48" y="153" fontSize="10" maxLength="10"></paper>
+		</field>
+	<!--  	
+		<field name="发证机关" column="varchar_04">
+			<ui type="text"></ui>
+			<paper x="118" y="133" fontSize="10" maxLength="10"></paper>
+		</field>
+		
+		<field name="截止日期" column="varchar_05">
+			<ui type="text"></ui>
+			<paper x="118" y="133" fontSize="10" maxLength="10"></paper>
+		</field>
+		
+		<field name="性别" column="varchar_06">
+			<ui type="text"></ui>
+			<paper x="118" y="133" fontSize="10" maxLength="10"></paper>
+		</field>	
+		-->
+		<trigger name="读取二代证" triggerClass="cn.by.eform.ui.trigger.IDCardTrigger"></trigger>	
+	</field>
+
+	<field name="手机号码" column="varchar_07">
+		<ui type="text"></ui>
+		<paper x="194" y="211" fontSize="10" maxLength="11"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+		<validator name="validator" validatorClass="cn.by.eform.ui.validator.CellPhoneNumberValidator"></validator>
+	</field>
+
+	<field name="邮政编码" column="varchar_08">
+		<ui type="text"></ui>
+		<paper x="410" y="188" fontSize="10" maxLength="11"></paper>
+		<trigger name="number" triggerClass="cn.by.eform.ui.trigger.NumberKeyboard"></trigger>
+	</field>
+
+	<field name="帐户类型"  column="varchar_09" type="choice">
+	
+		<field name="银联龙卡通（磁条卡）" >
+			<ui type="checkbox"></ui>
+			<paper x="24" y="342" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+
+		<field name="银联龙卡通IC卡(深圳通)">
+			<ui type="checkbox"></ui>
+			<paper x="77" y="342" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+		<field name="银联龙卡通IC卡">
+			<ui type="checkbox"></ui>
+			<paper x="137" y="342" fontSize="10" maxLength="30"></paper>
+		</field>
+	</field>
+	
+	<field name="储蓄帐户"  column="varchar_10" type="choice">
+		
+		<field name="定期一本通">
+			<ui type="checkbox"></ui>
+			<paper x="37" y="362" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="整存整取(存单)">
+			<ui type="checkbox"></ui>
+			<paper x="72" y="356" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="存本取息">
+			<ui type="checkbox"></ui>
+			<paper x="137" y="356" fontSize="10" maxLength="30"></paper>
+		</field>	
+		
+		<field name="零存整取">
+			<ui type="checkbox"></ui>
+			<paper x="37" y="370" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="教育储蓄">
+			<ui type="checkbox"></ui>
+			<paper x="72" y="370" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+		<field name="通知存款(存单)">
+			<ui type="checkbox"></ui>
+			<paper x="114" y="370" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="通知存款一户通">
+			<ui type="checkbox"></ui>
+			<paper x="37" y="381" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="国债">
+			<ui type="checkbox"></ui>
+			<paper x="80" y="381" fontSize="10" maxLength="30"></paper>
+		</field>
+	</field>
+	
+	<field name="存款信息" column="varchar_11" type="choice">
+		
+		<field name="通兑（存单折通兑方式）">
+			<ui type="checkbox"></ui>
+			<paper x="40" y="413" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="不通兑（存单折通兑方式）">
+			<ui type="checkbox"></ui>
+			<paper x="61" y="413" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="留密（存单折支取方式）">
+			<ui type="checkbox"></ui>
+			<paper x="93" y="413" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="其他（存单折支取方式）">
+			<ui type="checkbox"></ui>
+			<paper x="117" y="415" fontSize="10" maxLength="30"></paper>
+		</field>
+	</field>
+	
+	<field name="开通电子银行服务（不选则不开通）" column="varchar_12" type="choice">
+		
+		<field name="网上银行">
+			<ui type="checkbox"></ui>
+			<paper x="152" y="644" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="手机银行">
+			<ui type="checkbox"></ui>
+			<paper x="152" y="655" fontSize="10" maxLength="30"></paper>
+		</field>
+
+		<field name="电话银行">
+			<ui type="checkbox"></ui>
+			<paper x="152" y="669" fontSize="10" maxLength="30"></paper>
+		</field>
+	
+		<field name="短信通">
+			<ui type="checkbox"></ui>
+			<paper x="152" y="684" fontSize="10" maxLength="30"></paper>
+		</field>
+		
+</field>
+
+</form>	
